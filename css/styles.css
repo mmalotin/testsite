@@ -1,0 +1,11 @@
+body {
+  margin: 0px;
+  background-color: #EEEEEE;
+  height:100%;
+  overflow: hidden;
+}
+
+.scrollable {
+  overflow: auto;
+  max-height: 88.5vh;
+}
