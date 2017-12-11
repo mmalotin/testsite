@@ -3,7 +3,7 @@ import PostAPI from './api'
 import { Link } from 'react-router-dom'
 import Paper from 'material-ui/Paper';
 import FloatingActionButton from 'material-ui/FloatingActionButton';
-import ArrowBack from 'material-ui/svg-icons/navigation/arrow-back';
+import ArrowBack from 'material-ui/svg-icons/hardware/keyboard-arrow-left';
 import Md from './MD.jsx'
 
 const styles = {
@@ -37,6 +37,7 @@ class Post extends React.Component {
       <div>
         <FloatingActionButton
           style={styles.button}
+          secondary={true}
           containerElement={<Link to={'/blog'} />}
           >
           <ArrowBack />

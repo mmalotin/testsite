@@ -6,7 +6,7 @@ import {tealA400, teal50} from 'material-ui/styles/colors';
 import SvgIcon from 'material-ui/SvgIcon';
 import {Link, withRouter} from 'react-router-dom';
 import IconButton from 'material-ui/IconButton';
-import {fade} from 'material-ui/utils/colorManipulator';
+import {darken} from 'material-ui/utils/colorManipulator';
 
 const styles = {
   appBar: {
@@ -20,13 +20,13 @@ const styles = {
   title: {
     position: 'relative',
     left: '5%',
-    fontFamily: 'Berkshire Swash, cursive',
+    fontFamily: 'Pacifico, cursive',
   },
 };
 
 const gh_icon = (
   <IconButton tooltip="Fork me on GitHub" href='https://www.google.com/' tooltipPosition='bottom-right' target='_blank'>
-    <SvgIcon color={fade(tealA400, 0.9)} hoverColor={teal50}>
+    <SvgIcon color={darken(tealA400, 0.1)} hoverColor={teal50}>
       <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205
       11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422
       18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838

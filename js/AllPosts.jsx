@@ -3,7 +3,7 @@ import PostAPI from './api';
 import { Link } from 'react-router-dom';
 import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
 import FloatingActionButton from 'material-ui/FloatingActionButton';
-import ArrowForward from 'material-ui/svg-icons/navigation/arrow-forward';
+import ArrowForward from 'material-ui/svg-icons/hardware/keyboard-arrow-right';
 import Paper from 'material-ui/Paper';
 
 const styles = {
@@ -37,6 +37,7 @@ class MyCard extends React.Component {
         </Card>
         <FloatingActionButton
           style={styles.button}
+          secondary={true}
           containerElement={<Link to={"/blog/" + this.props.id}/>}
           >
           <ArrowForward />
