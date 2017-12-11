@@ -4,8 +4,7 @@ import { Link } from 'react-router-dom'
 import Paper from 'material-ui/Paper';
 import FloatingActionButton from 'material-ui/FloatingActionButton';
 import ArrowBack from 'material-ui/svg-icons/navigation/arrow-back';
-import Remarkable from 'remarkable';
-const md = new Remarkable();
+import Md from './MD.jsx'
 
 const styles = {
   paper: {
@@ -16,7 +15,7 @@ const styles = {
   button: {
     position: 'fixed',
     left: 10,
-    top: 150,
+    top: '8%',
   }
 }
 
@@ -34,18 +33,16 @@ class Post extends React.Component {
 
   render(){
     const file = require('../markdowns/' + this.state.post.file + '.md')
-    const data = <div dangerouslySetInnerHTML={{__html: md.render(file)}} />
     return(
       <div>
         <FloatingActionButton
           style={styles.button}
-          secondary={true}
           containerElement={<Link to={'/blog'} />}
           >
           <ArrowBack />
         </FloatingActionButton>
         <Paper style={styles.paper}>
-          {data}
+          <Md file={file} />
         </Paper>
       </div>
     );

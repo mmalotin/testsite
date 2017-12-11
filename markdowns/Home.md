@@ -24,6 +24,31 @@ React.render(
 );
 ```
 
+
+```scala
+def renderContent(xhtml: NodeSeq): NodeSeq = {
+
+  import org.markdown4j.CodeBlockEmitter
+  
+  val config = Configuration.builder()
+    .forceExtentedProfile()
+    .setCodeBlockEmitter(new CodeBlockEmitter())
+    .build()
+
+  val markdownAsString = SomeService.load()
+  val htmlAsString = Processor.process(markdownAsString, config)
+  
+  val parser = new XhtmlParser(IOSource.fromString(htmlAsString))
+  
+  parser.initialize.document()
+}
+```
+
+```python
+def fubn(s):
+    return a*b
+```
+
 Pretty neat, eh?
 
 ## Tables?

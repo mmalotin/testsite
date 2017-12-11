@@ -11,7 +11,6 @@ const styles = {
     width: '50%',
     position: 'relative',
     left: '25%',
-    marginTop: 50,
     marginBottom: 70,
   },
   button: {
@@ -38,7 +37,6 @@ class MyCard extends React.Component {
         </Card>
         <FloatingActionButton
           style={styles.button}
-          secondary={true}
           containerElement={<Link to={"/blog/" + this.props.id}/>}
           >
           <ArrowForward />

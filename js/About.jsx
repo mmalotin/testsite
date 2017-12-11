@@ -1,8 +1,7 @@
 import React from 'react'
 import about from '../markdowns/About.md'
 import Paper from 'material-ui/Paper';
-import Remarkable from 'remarkable';
-const md = new Remarkable();
+import Md from './MD.jsx'
 
 const styles = {
   paper: {
@@ -17,7 +16,7 @@ class About extends React.Component {
   render() {
     return(
       <Paper style={styles.paper}>
-        <div dangerouslySetInnerHTML={{__html: md.render(about)}} />
+        <Md file={about} />
       </Paper>
     );
   }
