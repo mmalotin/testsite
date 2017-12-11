@@ -2,28 +2,31 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import AppBar from 'material-ui/AppBar';
 import {Tabs, Tab} from 'material-ui/Tabs';
-import {cyan200, pink400} from 'material-ui/styles/colors';
+import {tealA400, teal50} from 'material-ui/styles/colors';
 import SvgIcon from 'material-ui/SvgIcon';
 import {Link, withRouter} from 'react-router-dom';
 import IconButton from 'material-ui/IconButton';
+import {fade} from 'material-ui/utils/colorManipulator';
 
 const styles = {
   appBar: {
     flexWrap: 'wrap',
+    position: 'fixed',
   },
   tabs: {
-    width: '100%',
+    width: '40%',
+    marginRight: '1%'
   },
   title: {
     position: 'relative',
-    left: '44%',
-    fontFamily: 'Pacifico, cursive',
-  }
+    left: '5%',
+    fontFamily: 'Berkshire Swash, cursive',
+  },
 };
 
 const gh_icon = (
-  <IconButton tooltip="Fork me on GitHub" href='https://www.google.com/' tooltipPosition='bottom-left' target='_blank'>
-    <SvgIcon color={cyan200} hoverColor={pink400} style={{marginRight: 24}}>
+  <IconButton tooltip="Fork me on GitHub" href='https://www.google.com/' tooltipPosition='bottom-right' target='_blank'>
+    <SvgIcon color={fade(tealA400, 0.9)} hoverColor={teal50}>
       <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205
       11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422
       18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838
@@ -57,11 +60,10 @@ class Header extends React.Component {
   render() {
     return(
       <AppBar
-        title='Page Rank for Spark'
-        titleStyle={styles.title}
-        showMenuIconButton={false}
+        title='Weighted Page Rank Spark'
         style={styles.appBar}
-        iconElementRight={gh_icon}
+        titleStyle={styles.title}
+        iconElementLeft={gh_icon}
         >
         <Tabs style={styles.tabs} onChange={this.handleChange} value={this.state.tab}>
            <Tab value={'/'} label="Home" containerElement={<Link to="/"/>} />

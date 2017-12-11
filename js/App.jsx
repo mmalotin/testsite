@@ -4,15 +4,25 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Header from './Header'
 import Main from './Main'
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
-import {blueGrey900, cyan200, pink400} from 'material-ui/styles/colors';
+import {fade} from 'material-ui/utils/colorManipulator';
+import {blueGrey900, tealA400} from 'material-ui/styles/colors';
+
+const primary = blueGrey900;
+const accent = fade(tealA400, 0.85);
 
 const muiTheme = getMuiTheme({
     palette: {
-        primary1Color: blueGrey900,
-        accent1Color: pink400,
-        alternateTextColor: cyan200,
+        primary1Color: primary,
+        accent1Color: accent,
     },
     fontFamily: 'Roboto Slab, serif',
+    appBar: {
+      textColor: accent,
+    },
+    tabs: {
+      textColor: fade(accent, 0.6),
+      selectedTextColor: accent,
+    },
 });
 
 const App = () => (
